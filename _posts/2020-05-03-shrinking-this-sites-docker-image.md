@@ -60,11 +60,6 @@ EXPOSE 80
 ```
 This is the final image that I ended up with, note how the final layer does not install NPM or NodeJS. This is to save space as at that point the `builder` and `npmpackage` layers have already done everything related to NodeJS. This image only took up 69.1MB which is pretty good considering the compiled version of my site is over 50MB due to various images. The next step in shrinking my site's docker image will be compressing the images down, but that is unrelated to the docker image itself.
 
-EDIT: After compression of all of the images and WaifuCraft resource pack the whole site is 19MB with the image being 39MB
-
-EDIT #2: After posting this on Hacker News I got quite a few suggestions, the main one being that since I am using build layers I should be using the node docker image instead of a modified nginx-alpine. I have taken that suggestion with the new Dockerfile looking this this.
-
-EDIT #3: The Waifucraft images and resources have been moved to an external CDN, with the final image now being 20MB, with 5.6MB coming from alpine, 14.3MB coming from nginx, and a whole 40KB coming from my site itself. Future plans include swapping out nginx without something less bloated like [Quark by Suckless](https://tools.suckless.org/quark/).
 ```
 FROM node:10-alpine3.9 as npmpackages
 WORKDIR /app
@@ -81,5 +76,28 @@ FROM nginx:1.17.10-alpine
 RUN rm -r /usr/share/nginx/html/
 COPY --from=builder /app/_site/ /usr/share/nginx/html/
 
+EXPOSE 80
+```
+
+EDIT: After compression of all of the images and WaifuCraft resource pack the whole site is 19MB with the image being 39MB
+
+EDIT #2: After posting this on Hacker News I got quite a few suggestions, the main one being that since I am using build layers I should be using the node docker image instead of a modified nginx-alpine. I have taken that suggestion with the new Dockerfile looking this this.
+
+EDIT #3: The Waifucraft images and resources have been moved to an external CDN, with the final image now being 20MB, with 5.6MB coming from alpine, 14.3MB coming from nginx, and a whole 40KB coming from my site itself. Future plans include swapping out nginx without something less bloated like [Quark by Suckless](https://tools.suckless.org/quark/).
+
+EDIT #4: This site has been moved to Jekyll. The new Dockerfile looks like this. Notice how like the Eleventy Dockerfile it copies the dependency listings, gemfile and gemspec, installs the dependancies, then copies the rest of the site's source code.
+```
+FROM jekyll/jekyll as jekyll
+LABEL stage=jekyll
+WORKDIR /home/jekyll
+COPY Gemfile* ./
+COPY the-plain.gemspec .
+RUN bundle install
+COPY . .
+RUN jekyll b
+
+
+FROM nginx:alpine
+COPY --from=jekyll /home/jekyll/_site /usr/share/nginx/html
 EXPOSE 80
 ```
