@@ -2,6 +2,8 @@
 title: Ai Recolors New Mexico State Flag
 description: An overview of a few easy ways to deploy NodeJS programs
 date: 2018-10-18
+redirect_from:
+    - /posts/New-Mexico
 ---
 
 I'm bad at design, but good at programming. Which means I am very good at design. If your first response to that was "That makes no sense, you just said you are bad" then you are kinda correct. I really liked the results of this, but that is likely due to my personal bias
