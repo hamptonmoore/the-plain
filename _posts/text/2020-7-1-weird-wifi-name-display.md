@@ -16,7 +16,7 @@ Galaxy S8 running Android 9 with Kernel 4.4.153
 Amazon Firestick
 ![](https://cdn.hampton.pw/hampton.pw/resources/iosWifiBug/firestick.jpg)
 
-Both the s8 and the Firestick are rendering the result in what I deem as the correct way.
+Both the s8 and the Firestick are rendering the result in what I deem as the correct way with it showing the name just with some of the vertical characters cutoff.
 
 iPhone 6 running iOS 13.5.1
 ![](https://cdn.hampton.pw/hampton.pw/resources/iosWifiBug/iphone-ios1351.jpg)
