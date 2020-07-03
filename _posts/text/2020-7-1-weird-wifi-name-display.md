@@ -49,4 +49,6 @@ Vizio M55-C2 TV
 
 Both the Kindle and Vizio TV are showing what `iw` returned with the a and then escaped hexademical characters.
 
+I have no published a follow up to this post, [here](https://hamptonmoore.com/posts/weird-wifi-names-cont/).
+
 Discuss this post on Hacker News [here](https://news.ycombinator.com/item?id=23708056)

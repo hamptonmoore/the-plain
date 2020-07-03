@@ -5,7 +5,9 @@ layout: default
 <section>
 
 	<h1>Hampton Moore</h1>
-
+	<div style="margin-top:-15px;">
+		<a href="https://github.com/hamptonmoore">Github</a> | <a href="https://twitter.com/herohamp_">Twitter</a> | <a href="/feed.xml">RSS</a>
+	</div>
 	{% for post in site.posts %}
 		{% unless post.next %}
 			<h3 class="code">{{ post.date | date: '%Y' }}</h3>

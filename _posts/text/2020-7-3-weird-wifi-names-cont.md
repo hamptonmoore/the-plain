@@ -1,9 +1,10 @@
 ---
-title: Continuation of Comparing how different devices display the SSID "á̶̛̛̓̿̈͐͆̐̇̒̑̈́͘͝aaa"
+title: Comparing how different devices handle invalid UTF8 characters as SSIDs
 date: 2020-07-03
 ---
 
-This is a continuation of my previous post [Comparing how different devices display the SSID "á̶̛̛̓̿̈͐͆̐̇̒̑̈́͘͝aaa"](https://hamptonmoore.com/posts/weird-wifi-name-display/). After posting it on Hackernews I got lots of feedback. The key one was something that I had sadly missed when I originally started this project. When the wifi name of "á̶̛̛̓̿̈͐͆̐̇̒̑̈́͘͝aaa" got shortened down to a character before the second a. The issue was this character is actually two characters wide, so the first part of the character stayed, with the second byte of it missing. The character in question was ◌̈́, whos hex codepoint is cd84. Looking at the raw hex of the SSID you can see it ends in cd, `61ccb6cc81cc93ccbfcc88cc9bcc9bcd90cd98cd86cc90cd9dcc87cc92cc91cd61ccb6cc81cc93ccbfcc88cc9bcc9bcd90cd98cd86cc90cd9dcc87cc92cc91cd`. For those curious about how that would be rendered on your device here it is "á̶̛̛̓̿̈͐͆̐̇̒̑͘͝�". After realizing this I decided my previous comparisons of how devices reacted to my weird unicode SSID was unfair. The SSID this time is "á̶̛̛̓̿̈͐͆̐̇̒̑͘͝a" which is almost the exact same but that last two byte long character was replaced with an "a". This was to keep the SSID at 32 octets long.
+This is a continuation of my previous post [Comparing how different devices display the SSID "á̶̛̛̓̿̈͐͆̐̇̒̑̈́͘͝aaa"](https://hamptonmoore.com/posts/weird-wifi-name-display/). After posting it on HackerNews I got lots of feedback. The key one was something that I had sadly missed when I originally started this project. When the WiFi name of "á̶̛̛̓̿̈͐͆̐̇̒̑̈́͘͝aaa" got shortened down to a one byte before the second "a" due to the 32 byte/octet limit of SSIDs. The issue was this character is actually two bytes wide, so the first part of the character stayed, with the second byte of it missing. The character in question was ◌̈́, with the hex codepoint cd84. Looking at the raw hex of the SSID you can see it ends in cd, `61ccb6cc81cc93ccbfcc88cc9bcc9bcd90cd98cd86cc90cd9dcc87cc92cc91cd`. For those curious about how that would be rendered on your device here it is "á̶̛̛̓̿̈͐͆̐̇̒̑͘͝�". After realizing this I decided my previous comparisons of how devices reacted to my weird unicode SSID was unfair. The SSID this time is "á̶̛̛̓̿̈͐͆̐̇̒̑͘͝a" which is almost the exact same but that last two byte long character was replaced with an "a". This was to keep the SSID at 32 octets long.
+Looking at the new hex of the SSID `61ccb6cc81cc93ccbfcc88cc9bcc9bcd90cd98cd86cc90cd9dcc87cc92cc9161` you can see that is is identical baring the `61` instead of a `cd` at the end. 
 
 Below are the previous photos of the previous SSID "á̶̛̛̓̿̈͐͆̐̇̒̑͘͝�" with the new SSID "á̶̛̛̓̿̈͐͆̐̇̒̑͘͝a" under it. They are also grouped the same as previously to keep continuity.
 
@@ -32,7 +33,7 @@ These results were interesting. It showed that if the UTF-8 character in an SSID
 2012 Macbook running High Sierra 10.13.6
 ![](https://cdn.hampton.pw/hampton.pw/resources/iosWifiBug/d2/macos.jpg)
 
-Unlike last time the Macbook actually showed the network. I belive last time instead of falling back to Mac OS Roman like iOS did the Macbook just treated the SSID as spam or noise and dropped it
+Unlike last time the Macbook actually showed the network. I believe last time instead of falling back to Mac OS Roman like iOS the Macbook just treated the SSID as spam or noise and dropped it
 
 Windows 10 Pro 10.0.19041
 ![](https://cdn.hampton.pw/hampton.pw/resources/iosWifiBug/windows10.png)
@@ -61,7 +62,7 @@ Unlike last time the kindle was able to show the SSID without escape any of the 
 Sadly the Vizio was not able to show the SSID and just fell back to escaped hex.
 
 The results from changing the SSID showed a couple things, namely devices really do not like it when they are given invalid or incomplete UTF-8 codes and lots of devices handle UTF-8 text much better than I thought they would.
-It also showed that some devices fallback to 8 bit encoding formats when they see an invalid UTF-8 codepoint, there is probably some room for exploitation here like inserting escape keys.
+It also showed that some devices fallback to their native 8 bit encoding formats when they see an invalid UTF-8 codepoint, there is probably some room for exploitation here like inserting escape keys.
 I originally was not expecting the kindle to work at all, nor the chromebook after seeing the slew of question marks originally. Android was also found to be at handling text with invalid UTF-8 characters it just removed them as opposed to switching up formatting, falling back to hex, or erroring out with all question marks. 
 
 Thank you to everyone who provided valuable feedback on the previous post. I have more research I plan ond doing with this in the future.
