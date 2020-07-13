@@ -28,7 +28,7 @@ layout: default
 					{% if post.externalURL %}
 					<a href="{{ post.externalURL }}">{{ post.title }}</a>
 					{% else %}
-					<a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
+					<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 					{% endif %}
 
 				</div>

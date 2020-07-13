@@ -8,8 +8,8 @@
 	<title>{{ site.title }}</title>
 {% endif %}
 
-<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-
+<meta name="description" content="{% if page.description %}{{ page.description | escape | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:image" content="{% if page.preview %}{{page.preview}}{% else %}https://jeffalo-og.now.sh/**Hampton**%20%2F%20{{ page.title | escape }}.png?theme=light&md=1&images=https://avatars2.githubusercontent.com/u/8162992&fontSize=50px&widths=500&heights=500{% endif %}" />
 <link rel="stylesheet" href="{{ "/assets/core.css" }}">
 <link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
 <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
