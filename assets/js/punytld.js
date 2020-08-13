@@ -14,8 +14,38 @@ intToHSL = function (num) {
 	return `hsl(${shortened},100%,30%)`;
 };
 
+let colorSets = {
+	cjk: "#779ECB",
+	hangul: "#EEE0C9",
+	katakana: "#341A59",
+	hebrew: "#88BBE4",
+	hiragana: "#87DCC0",
+	cyrillic: "#CDF1AF",
+	arabic: "#E494D3",
+	devanagari: "#998AD3",
+	latin: "#704523",
+	thai: "#9A91AC",
+	digit: "#FFB9C4",
+	null: "#FE6B64",
+	asterisk: "#85A8BA",
+	nko: "#E36704",
+	greek: "#B29DD9",
+	armenian: "#FD982A",
+	商城: "#B1C5C3",
+	公司: "#FFB447",
+	在线: "#DC453D",
+	网络: "#77DD77",
+	网店: "#FC4E29",
+	닷컴: "#E36704",
+	コム: "#771951",
+	中文网: "#560763",
+	购物: "#0D7E4A",
+	קום: "#C538BD",
+};
+
 function nameToColor(name) {
-	return intToHSL(xmur3(name));
+	return colorSets[name];
+	//return intToHSL(xmur3(name));
 }
 
 makeGraphConfig = (dataset) => {
@@ -36,6 +66,16 @@ makeGraphConfig = (dataset) => {
 		},
 		options: {
 			responsive: true,
+			plugins: {
+				datalabels: {
+					color: "white",
+					formatter: function (value, context) {
+						return context.chart.data.labels[context.dataIndex];
+					},
+					display: "auto",
+					anchor: "center",
+				},
+			},
 		},
 	};
 };
