@@ -1,6 +1,6 @@
 ---
 title: Colored emojis on Fedora 32 🎉
-date: 2020-07-03
+date: 2020-08-03
 ---
 
 If you have used Google Chrome, VSCode, Discord, or any other chromium based programs on Fedora 32 you will have noticed that all of the emojis are black and white.
