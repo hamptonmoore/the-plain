@@ -1,0 +1,68 @@
+{
+	"charactetSetCountTLDTotal": [
+		{ "item": "cjk", "count": 151424 },
+		{ "item": "hangul", "count": 6007 },
+		{ "item": "katakana", "count": 3845 },
+		{ "item": "hebrew", "count": 2202 },
+		{ "item": "hiragana", "count": 1868 },
+		{ "item": "cyrillic", "count": 1072 },
+		{ "item": "arabic", "count": 906 },
+		{ "item": "devanagari", "count": 78 },
+		{ "item": "latin", "count": 12 },
+		{ "item": "thai", "count": 3 }
+	],
+	"characterSetCountSLD": [
+		{ "item": "cjk", "count": 112826 },
+		{ "item": "latin", "count": 42226 },
+		{ "item": "hangul", "count": 3830 },
+		{ "item": "digit", "count": 2118 },
+		{ "item": "hebrew", "count": 2052 },
+		{ "item": "katakana", "count": 1874 },
+		{ "item": "cyrillic", "count": 1061 },
+		{ "item": "arabic", "count": 845 },
+		{ "item": "hiragana", "count": 416 },
+		{ "item": null, "count": 90 },
+		{ "item": "devanagari", "count": 69 },
+		{ "item": "thai", "count": 4 },
+		{ "item": "asterisk", "count": 3 },
+		{ "item": "nko", "count": 1 },
+		{ "item": "greek", "count": 1 },
+		{ "item": "armenian", "count": 1 }
+	],
+	"charactetSetCountTLD": [
+		{ "item": "cjk", "count": 37 },
+		{ "item": "arabic", "count": 10 },
+		{ "item": "katakana", "count": 8 },
+		{ "item": "devanagari", "count": 3 },
+		{ "item": "cyrillic", "count": 3 },
+		{ "item": "hangul", "count": 3 },
+		{ "item": "latin", "count": 2 },
+		{ "item": "thai", "count": 1 },
+		{ "item": "hebrew", "count": 1 },
+		{ "item": "hiragana", "count": 1 }
+	],
+	"topTLDs": [
+		{ "item": "商城", "count": 43004 },
+		{ "item": "公司", "count": 36423 },
+		{ "item": "在线", "count": 25903 },
+		{ "item": "网络", "count": 24423 },
+		{ "item": "网店", "count": 9506 },
+		{ "item": "닷컴", "count": 4776 },
+		{ "item": "コム", "count": 3447 },
+		{ "item": "中文网", "count": 2800 },
+		{ "item": "购物", "count": 2328 },
+		{ "item": "קום", "count": 2202 }
+	],
+	"characterSetCountWhereSLDMatchesTLD": [
+		{ "item": "cjk", "count": 111682 },
+		{ "item": "hangul", "count": 3826 },
+		{ "item": "hebrew", "count": 2052 },
+		{ "item": "katakana", "count": 1648 },
+		{ "item": "cyrillic", "count": 1059 },
+		{ "item": "arabic", "count": 840 },
+		{ "item": "hiragana", "count": 223 },
+		{ "item": "devanagari", "count": 69 },
+		{ "item": "latin", "count": 12 },
+		{ "item": "thai", "count": 1 }
+	]
+}

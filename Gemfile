@@ -7,3 +7,4 @@ gem 'html-proofer'
 gem 'tzinfo'
 gem 'tzinfo-data'
 gem 'jekyll-redirect-from'
+gem "kramdown-parser-gfm"
