@@ -29,6 +29,24 @@
 		{ "item": "greek", "count": 1 },
 		{ "item": "armenian", "count": 1 }
 	],
+	"characterSetCountSLDWithoutSpam": [
+		{ "item": "cjk", "count": 110852 },
+		{ "item": "latin", "count": 14857 },
+		{ "item": "hangul", "count": 3819 },
+		{ "item": "hebrew", "count": 2052 },
+		{ "item": "katakana", "count": 1865 },
+		{ "item": "digit", "count": 1759 },
+		{ "item": "cyrillic", "count": 1060 },
+		{ "item": "arabic", "count": 845 },
+		{ "item": "hiragana", "count": 411 },
+		{ "item": null, "count": 90 },
+		{ "item": "devanagari", "count": 69 },
+		{ "item": "asterisk", "count": 3 },
+		{ "item": "thai", "count": 2 },
+		{ "item": "nko", "count": 1 },
+		{ "item": "greek", "count": 1 },
+		{ "item": "armenian", "count": 1 }
+	],
 	"charactetSetCountTLD": [
 		{ "item": "cjk", "count": 37 },
 		{ "item": "arabic", "count": 10 },
