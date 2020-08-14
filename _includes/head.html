@@ -1,15 +1,30 @@
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 {% if page.title %}
-	<title>{{ page.title }} - {{ site.title }}</title>
+<title>{{ page.title }} - {{ site.title }}</title>
 {% else %}
-	<title>{{ site.title }}</title>
+<title>{{ site.title }}</title>
 {% endif %}
 
-<meta name="description" content="{% if page.description %}{{ page.description | escape | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-<meta property="og:image" content="{% if page.preview %}{{page.preview}}{% else %}https://jeffalo-og.now.sh/**Hampton**%20%2F%20{{ page.title | escape }}.png?theme=light&md=1&images=https://avatars2.githubusercontent.com/u/8162992&fontSize=50px&widths=500&heights=500{% endif %}" />
+<meta
+	name="description"
+	content="{% if page.description %}{{ page.description | escape | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"
+/>
+<meta
+	property="og:image"
+	content="{% if page.preview %}{{page.preview}}{% else %}https://jeffalo-og.now.sh/**Hampton**%20%2F%20{{ page.title | escape }}.png?theme=light&md=1&images=https://avatars2.githubusercontent.com/u/8162992&fontSize=50px&widths=500&heights=500{% endif %}"
+/>
 <link rel="stylesheet" href="{{ "/assets/core.css" }}">
-<link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
-<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+<link
+	rel="canonical"
+	href="{{ page.url | prepend: site.baseurl | prepend: site.url }}"
+/>
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }}"
+href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+<script
+	data-ad-client="ca-pub-7657260385943834"
+	async
+	src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+></script>
