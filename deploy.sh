@@ -1,2 +1,2 @@
-docker build . -t "registry.voyager1.hampton.pw/blog"
-docker push registry.voyager1.hampton.pw/blog
+docker build . -t "registry.hamptonmoore.com/blog"
+docker push registry.hamptonmoore.com/blog
