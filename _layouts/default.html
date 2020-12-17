@@ -14,9 +14,11 @@ published: true
 
 		<div id="content">
 			{{ content }}
+
+			{% include footer.html %}
 		</div>
 
-		{% include footer.html %}
+
 
 		<img src="/count?p=/hampton.pw/{{ page.url }}" style="display: none;" />
 	</body>
